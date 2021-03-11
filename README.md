@@ -40,5 +40,5 @@ Categories=Utility;
 
 В ```AWP_5.2_FAQ.pdf``` могат да бъдат открити инструкии за работа със софтуера и как да си смените PIN кода.
 
-4. Добавяне към Firefox
+#### 3. Добавяне към Firefox
 В ```StampIT_usermanual_Windows_Firefox_bg_v4.0.0.pdf``` е описано подробно как става, но при мен беше достатъчно само добавянето на ```libcmP11.so``` файла от архива ```CSSI_Client_5.0_Linux.zip```.
