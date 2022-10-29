@@ -11,6 +11,17 @@
 sudo apt install pcscd
 sudo apt install pcsc-tools
 ```
+По някаква причина на Ubuntu Live не може да се инсталира. Връща грешка `Package 'pcscd' has no installation candidate`. Единственото решение, което намерих е да изтегля source-а и така да го инсталирам. Последната версия може да се изтегли от [официалния сайт](https://pcsclite.apdu.fr/files/). Процеса по компилиране и инсталиране е описан [тук](https://www.howtogeek.com/105413/how-to-compile-and-install-from-source-on-ubuntu/), но на кракто е това:
+```
+tar -xzvf ARCHIVE_NAME.tar.gz
+cd ARCHIVE_NAME
+./configure
+make
+sudo make install
+```
+Като, ако липсват dependecy-та,  `./configure` връща грешка от рода на `configure: error: install DEPENDENCY_PACKAGE_NAME`. Инсталираме го чрез `sudo apt-get install DEPENDENCY_PACKAGE_NAME` и изпълняваме пак `./configure`. Повтаряме процеса, докато завърши успешно.
+
+
 _***pcsc-tools** е, ако желаете да използвате командата ```pcsc_scan```, за да видите дали устройството се разпознава._
 
 Инсталирайте драйверите от файла ```libabcccid_2.0.2-1_amd64.deb``` в архива ```Circle_Linux_Installer_v2.0.2.zip```.
