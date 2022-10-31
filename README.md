@@ -11,16 +11,6 @@
 sudo apt install pcscd
 sudo apt install pcsc-tools
 ```
-По някаква причина на Ubuntu Live не може да се инсталира. Връща грешка `Package 'pcscd' has no installation candidate`. Единственото решение, което намерих е да изтегля source-а и така да го инсталирам. Последната версия може да се изтегли от [официалния сайт](https://pcsclite.apdu.fr/files/). Процеса по компилиране и инсталиране е описан [тук](https://www.howtogeek.com/105413/how-to-compile-and-install-from-source-on-ubuntu/), но на кракто е това:
-```
-tar -xzvf ARCHIVE_NAME.tar.gz
-cd ARCHIVE_NAME
-./configure
-make
-sudo make install
-```
-Като, ако липсват dependecy-та,  `./configure` връща грешка от рода на `configure: error: install DEPENDENCY_PACKAGE_NAME`. Инсталираме го чрез `sudo apt-get install DEPENDENCY_PACKAGE_NAME` и изпълняваме пак `./configure`. Повтаряме процеса, докато завърши успешно.
-
 
 _***pcsc-tools** е, ако желаете да използвате командата ```pcsc_scan```, за да видите дали устройството се разпознава._
 
@@ -59,3 +49,7 @@ Categories=Utility;
 ```
 sudo apt install opensc
 ```
+
+
+# Използване на КЕП под Windows
+Старитар се автоматичният инсталатор и се инсталират драйверите за устройство Circle CIR115 ICC. Фойловете са налични на [Stampit.org](https://stampit.org/bg/page/795). След това се отваря _Smart Securit Interface_ (трябва да има икона на екрана) и от менюто _Регистрация_ се избира _Регистрирай_. Това е! Сертификатът би трябвало да работи в Edge и Chrome.
